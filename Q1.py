@@ -18,6 +18,14 @@ A = np.array([[18.0, 22.0, 54.0, 42.0],
                 [54.0, 86.0, 174.0, 134.0],
                 [42.0, 62.0, 134.0, 106.0]])
 
+#calculate the determinant
+print("the determinant of first minor is:", A[0, 0], "> 0")
+print("the determinant of second minor is:", np.linalg.det(np.array([[18, 22],
+                                                                     [22, 70]])), "> 0")
+print("the determinant of third minor is:", np.linalg.det(np.array([[18, 22, 54],
+                                                                    [22, 70, 86],
+                                                                    [54, 86, 174]])), "> 0")
+print("the determinant of A is:", np.linalg.det(A), "> 0")
 
 L, U = lu(A)
 #create the matrix sqrt D
@@ -32,7 +40,7 @@ for i in range(numOfRows):
 
 #nultiply L and sqrtD
 R = np.matmul(L, sqrtD)
-
+print()
 print("the matrix R:")
 print()
 print(R)
